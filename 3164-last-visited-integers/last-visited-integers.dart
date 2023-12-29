@@ -8,16 +8,14 @@ class Solution {
       final word = words[i];
       if (words[i] == 'prev') {
         k++;
-        final lastVisitedIndex = k - 1;
-        if (lastVisitedIndex >= visitedNumbers.length) {
-          result.add(-1);
+        if (k <= visitedNumbers.length) {
+          result.add(visitedNumbers[k - 1]);
         } else {
-          final numsReverse = visitedNumbers.reversed.toList();
-          result.add(numsReverse[lastVisitedIndex]);
+          result.add(-1);
         }
       } else {
         k = 0;
-        visitedNumbers.add(int.parse(word));
+        visitedNumbers.insert(0, int.parse(word));
       }
     }
 
