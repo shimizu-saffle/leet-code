@@ -1,6 +1,5 @@
 class Solution {
-  int arraySign(List<int> nums) {
-    if (nums.length == 0) return 0;
+  int arraySign(List<int> nums) {    
     var negativeCount = 0;
     for (final num in nums) {
       if (num == 0) {
