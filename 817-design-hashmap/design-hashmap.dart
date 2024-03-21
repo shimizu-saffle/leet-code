@@ -7,7 +7,7 @@ class MyHashMap {
     final hash = key % _bucketSize;
     final bucket = buckets[hash];
     for (var i = 0; i < bucket.length; i++) {
-      var (pairKey, _) = bucket[i];
+      final (pairKey, _) = bucket[i];
       if (pairKey == key) {
         bucket[i] = (key, value);
         return;
@@ -19,8 +19,8 @@ class MyHashMap {
   int get(int key) {
     final hash = key % _bucketSize;
     final bucket = buckets[hash];
-    for (var pair in bucket) {
-      var (pairKey, pairValue) = pair;
+    for (final pair in bucket) {
+      final (pairKey, pairValue) = pair;
       if (pairKey == key) {
         return pairValue;
       }
